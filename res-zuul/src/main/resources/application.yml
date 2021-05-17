@@ -1,0 +1,34 @@
+# 应用名称
+spring:
+  application:
+    name: res-zuul
+eureka:
+  client:
+    service-url: http://127.0.0.1/8000/eureka
+zuul:
+  ignoredPatterns: /user/**
+  ignoredServices: '*'
+  #网关前缀
+  prefix: /api
+  #开启前缀移除 访问时
+  strip-prefix: true
+  routes:
+    res-index:
+      path: /index/**
+      serviceId: res-index
+      sensitive-headers:
+    res-order:
+      path: /order/**
+      serviceId: res-order
+      sensitive-headers:
+    res-user:
+      path: /user/**
+      serviceId: res-user
+      sensitive-headers:
+    #默认
+    default:
+      path: /**
+      url: http://www.sina.com
+server:
+  port: 80
+

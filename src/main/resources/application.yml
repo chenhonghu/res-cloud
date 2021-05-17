@@ -1,0 +1,26 @@
+server:
+  port: 8080
+logging:
+  level:
+    root: warn
+    com.yc: info
+    org.springframework: warn
+  file:
+    path: ./logs
+    name: yc_res.log
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/res
+    username: root
+    password: a
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+  redis:
+    host: 127.0.0.1
+    port: 6379
+swagger:
+  enabled: true
+
+

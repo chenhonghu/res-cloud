@@ -8,8 +8,7 @@ spring:
     password: a
   jpa:
     show-sql: true
-    hibernate:
-      ddl-auto: update
+   
 eureka:
   client:
     serviceUrl:

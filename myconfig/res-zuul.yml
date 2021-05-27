@@ -6,8 +6,8 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:8000/eureka
 zuul:
-  routes:
   sensitive-headers:
+  routes:
     res-index:
       path: /res-index/**
       serviceId: res-index

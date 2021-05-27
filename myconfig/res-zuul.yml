@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: res-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8000/eureka
+zuul:
+  routes:
+  sensitive-headers:
+    res-index:
+      path: /res-index/**
+      serviceId: res-index
+      sensitive-headers:
+    res-order:
+      path: /res-order/**
+      serviceId: res-order
+      sensitive-headers:
+    res-user:
+      path: /res-user/**
+      serviceId: res-user
+      sensitive-headers:
+    #默认
+    default:
+      path: /**
+      url: res-index
+  
+server:
+  port: 80
+
